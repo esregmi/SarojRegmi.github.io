@@ -115,18 +115,20 @@ function findLongestWord(arr){
  * 
  * @param {int } value1 The firts value; 
  * @param {int } value2 The second value;
- * @returns { array } The array odf arrays;
+ * @returns { aLenArr } The array of arrays;
  * */
- function generateArray(value1, value2) {
-    let arr1 = [], arr2 = [];
 
-    for (let i = 1; i <= value1 * value2; i++) {
-        arr1[i] = i;
+function generateArray(value1, value2) {
+        (a, b) {
+        let seqCount = 0;
+        let aLenArr = [];
+        for(let i=0; i<a; i++) {
+            let bLenArr = [];
+            for(let j=0; j<b; j++) {
+                seqCount++;
+                bLenArr.push(seqCount);
+            }
+            aLenArr.push(bLenArr);
+        }
+        return aLenArr;
     }
-
-    for (let j = 1; j <= value1 * value2; j += value2) {
-        arr2.push(arr1.slice(j, j + value2));
-    }
-
-    return arr2;
-}
