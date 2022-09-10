@@ -1,9 +1,20 @@
 "use strict";
 
-/* You need the module.exports when testing in node.  Comment it out when you send your file to the browser
-*/ 
-module.exports = {maxOfThree: maxOfThree, sum: sum, multiply: multiply, scoreExams: scoreExams, reverseArrayInPlace: reverseArrayInPlace, reverseArray: reverseArray, findLongestWord: findLongestWord, generateArray: generateArray }; //add all of your function names here that you need for the node mocha tests
+/* You need the module.exports when testing in node.  Comment it out when you send your file to the browser */
+/*
+module.exports = {
+    maxOfThree: maxOfThree,
+    sum: sum, 
+    multiply: multiply,
+    findLongestWord: findLongestWord,
+    reverseArray: reverseArray,
+    scoreExams: scoreExams,
+    generateArray: generateArray
 
+};
+*/
+//add all of your function names here that you need for the node mocha tests
+ 
 /**
  * 
  * @param {number} a is a number
@@ -11,13 +22,13 @@ module.exports = {maxOfThree: maxOfThree, sum: sum, multiply: multiply, scoreExa
  * @param {number} c is a number
  * @returns {number} largest of a, b, c
  */
-function maxOfThree(a, b, c){ 
+ function maxOfThree(a, b, c){ 
     if (a>b && a>c) return a;
     if (b>a && b>c) return b;
     if (c>a && c>b) return c;
     
 }
-
+// Sum and muntiply of a given array elements
 /**
  * 
  * @param {Array} arr of numbers
@@ -45,13 +56,44 @@ function maxOfThree(a, b, c){
 	return tot;
 }
 
+// Finding the longest array of strings
 /**
  * 
- * @param {Array} studentAnswers array of numbers
- * @param {Array} correctAnswers array of numbers
+ * @param {Array} arr of strings 
+ * @returns {Number} length of longest strings
+ */
+function findLongestWord(arr){
+    let longestStr = arr[0];
+     for(let i=0; i<arr.length; i++){
+     if(arr[i].length > longestStr.length){
+     longestStr = arr[i].length;
+     }
+     }
+     return longestStr;
+    }
+// Reverse array:
+// Missing array in reversePlace;
+    /**
+     * 
+     * @param {Array} arr with elements to reverse
+     * @returns {Array} array with reversed elements
+     */
+
+function reverseArray(arr){
+  let array = [];
+  for(let i = arr.length-1; i>=0; i--){
+  array.push(arr[i]);
+  }
+  return array;
+}
+
+// SocreExams:
+/**
+ * 
+ * @param {Array} studentAnswers in array 
+ * @param {Array} correctAnswers in array 
  * @returns 
  */
-
 function scoreExams(studentAnswers,correctAnswers){
 	let scoretest = [];
 	//let count =0;
@@ -66,69 +108,23 @@ function scoreExams(studentAnswers,correctAnswers){
 	}
 	return scoretest;
 }
-
+// Generate Array:
 /**
  * 
- * @param {array} array with characters
- * @returns return reverse 
+ * @param {Array} a is the length of outside array 
+ * @param {Array} b is the inside array 
+ * @returns {Array} aLenArr is the inside array 
  */
- function reverseArray(array) {
-    let newarr = [];
-    for (const element of array) {
-        newarr.unshift(element);
-    }
-
-    return newarr;
-}
-/**
- * 
- * @param {array} array elements
- * @returns return reverse
- */
-function reverseArrayInPlace(array) {
-    let arr1 = array.splice(0);
-    for (let i = arr1.length - 1; i >= 0; i--) {
-        array.push(arr1[i]);
-    }
-    return array;
-/*
-/**
- * 
- * @param {arr} arr with string
- * @returns longest length
- */
-/*
-function findLongestWord(arr){
-    let longestSize = 0;
-    let longestStr;
-    for(let i=0; i<arr.length; i++){
-    if(arr[i].length > longestSize){
-    longestSize = arr[i].length;
-    longestStr = arr[i];
-    }
-    }
-    return longestStr;
-   }
-*/
-
-/**
- * 
- * @param {int } value1 The firts value; 
- * @param {int } value2 The second value;
- * @returns { aLenArr } The array of arrays;
- * */
-
-function generateArray(value1, value2) {
-        (a, b) {
-        let seqCount = 0;
-        let aLenArr = [];
-        for(let i=0; i<a; i++) {
-            let bLenArr = [];
-            for(let j=0; j<b; j++) {
-                seqCount++;
-                bLenArr.push(seqCount);
-            }
-            aLenArr.push(bLenArr);
+function generateArray(a, b) {
+    let seqCount = 0;
+    let aLenArr = [];
+    for(let i=0; i<a; i++) {
+        let bLenArr = [];
+        for(let j=0; j<b; j++) {
+            seqCount++;
+            bLenArr.push(seqCount);
         }
-        return aLenArr;
+        aLenArr.push(bLenArr);
     }
+    return aLenArr;
+}
