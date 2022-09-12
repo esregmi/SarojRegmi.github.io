@@ -9,8 +9,8 @@ const imports = require("./fnExps.js");  //with node need the name of your file 
 const double = imports.double;  //do this for all of the functions used in the Mocha tests
 const myMap = imports.myMap;
 const times100 = imports.times100;
-//const myMap = imports.myMap;
 */
+
 
 
 
@@ -59,7 +59,7 @@ describe("times100", function () {
     describe("myMap", function () {
         const testArray = [-10, 0, 10, 20];
         it("tests myMap on triples anonymous function", function () {
-            assert.deepStrictEqual(myMap(testArray,function double(num){
+            assert.deepStrictEqual(myMap(testArray,function(num){
                 return num*3;
             }), [-30, 0, 30, 60]);
             // assert.deepStrictEqual(myMap(testArray,  /* YOUR CODE HERE */), [-30, 0, 30, 60]);
