@@ -8,6 +8,7 @@ module.exports = {
     multiply: multiply,
     findLongestWord: findLongestWord,
     reverseArray: reverseArray,
+    reverseArrayInPlace: reverseArrayInPlace,
     scoreExams: scoreExams,
     generateArray: generateArray
 
@@ -73,6 +74,21 @@ function findLongestWord(arr){
     }
 // Reverse array:
 // Missing array in reversePlace;
+
+/**
+ * 
+ * @param {Array} array to reverse 
+ * @returns {array} retruns reversed array
+ */
+function reverseArrayInPlace(array) {
+    for (let i=0; i<array.length/2; i++){
+        let swap = array[i];
+        array[i] = array[array.length-1-i];
+        array[array.length-1-i] = swap;
+    }
+    return array;
+}
+
     /**
      * 
      * @param {Array} arr with elements to reverse

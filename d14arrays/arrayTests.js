@@ -11,6 +11,7 @@ const multiply = myExports.multiply;
 const sum = myExports.sum;
 const findLongestWord = myExports.findLongestWord;
 const reverseArray = myExports.reverseArray;
+const reverseArrayInPlace = myExports.reverseArrayInPlace;
 const scoreExams = myExports.scoreExams;
 const generateArray = myExports.generateArray;
 */

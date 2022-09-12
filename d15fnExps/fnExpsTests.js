@@ -3,11 +3,15 @@
 /* You need the assert and function name declarations to test in node.  
 Comment these out when you send it to the browser with the index.html mocha setup page.
 */
+/*
 const assert = require("assert");  //always need this with node
 const imports = require("./fnExps.js");  //with node need the name of your file with your functions here
 const double = imports.double;  //do this for all of the functions used in the Mocha tests
 const myMap = imports.myMap;
 const times100 = imports.times100;
+//const myMap = imports.myMap;
+*/
+
 
 
 /* the following comment is needed when you run in the browser environment */
@@ -55,9 +59,15 @@ describe("times100", function () {
     describe("myMap", function () {
         const testArray = [-10, 0, 10, 20];
         it("tests myMap on triples anonymous function", function () {
-            assert.deepStrictEqual(myMap(testArray,  /* YOUR CODE HERE */), [-30, 0, 30, 60]);
+            assert.deepStrictEqual(myMap(testArray,function double(num){
+                return num*3;
+            }), [-30, 0, 30, 60]);
+            // assert.deepStrictEqual(myMap(testArray,  /* YOUR CODE HERE */), [-30, 0, 30, 60]);
         });
         it("tests myMap on triples arrow function", function () {
-            assert.deepStrictEqual(myMap(testArray, /* YOUR CODE HERE */), [-30, 0, 30, 60]);
+            assert.deepStrictEqual(myMap(testArray, function double(num){
+                return num*3;
+            }), [-30, 0, 30, 60]);
         });
     });
+
