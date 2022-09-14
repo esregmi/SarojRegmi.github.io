@@ -30,8 +30,6 @@ bank.saveTransaction = function (id, amount) {
 
 bank.debit = function (id, amount) {
     /* make sure current balance is > amount */
-//IMPLEMENT THIS
-};
 
 bank.credit = function (id, amount) {
     this.saveTransaction(id, amount);
