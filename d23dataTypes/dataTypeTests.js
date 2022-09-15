@@ -4,12 +4,13 @@
 /*
 const assert = require("assert");  //always need this with node
 const myExports = require("./app.js");  //with node need the name of your file with your functions here
-const getMaxSubSum = myExports.getMaxSubSum;  //do this for all of the functions used in the Mocha tests
+// const getMaxSubSum = myExports.getMaxSubSum;  //do this for all of the functions used in the Mocha tests
 const ucFirst = myExports.ucFirst; 
 const truncate = myExports.truncate; 
 const camelize = myExports.camelize; 
 const checkSpam = myExports.checkSpam;
 const extractCurrencyValue = myExports.extractCurrencyValue;
+const getMaxSubSum = myExports.getMaxSubSum;
 */
 
 

@@ -2,7 +2,7 @@
 /* eslint-disable */
 
 /* You need the module.exports when testing in node.  Comment it out when you send your file to the browser */
-// module.exports = { ucFirst, getMaxSubSum, truncate , camelize, checkSpam,extractCurrencyValue}; //add all of your function names here that you need for the node mocha tests
+ //module.exports = { ucFirst, getMaxSubSum, truncate , camelize, checkSpam,extractCurrencyValue}; //add all of your function names here that you need for the node mocha tests
 
 
 
@@ -43,36 +43,24 @@ function extractCurrencyValue(str){
  * @returns {number} the total of the maximal subarray
  
  */
- function getMaxSubSum(arr) {
-    let max = [0];
-    for (let elm of arr) {
-        if (elm > max) {
-            max = elm;
+
+function getMaxSubSum (arr){
+    let maxSum = arr[0];
+    for (let i =0; i<arr.length; i++){
+        let curSum = 0;
+        for (let j=i; j<arr.length;j++){
+            curSum += arr[j];
+            if(curSum > maxSum){
+                maxSum = curSum;
+            }
         }
     }
-    let index = arr.indexOf(max);
-    arr[index] = 0;
-    let sum = 0;
-    let countPostive = 0;
-    for (let elm of arr) {
-        if (elm < 0) {
-            continue;
-        } else {
-            sum += elm;
-            countPostive++;
-        }
+    if (maxSum < 0 || maxSum == null) return 0;
+    return maxSum;
     }
-    if (countPostive <= 2) {
-        return sum + max;
-    } else {
-        if (sum == max) {
-            return sum + max;
-        } else if (sum > max) {
-            return sum;
-        }
-        return max;
-    }
-  }
+//
+
+
 
 
   function camelize(str) {
