@@ -30,9 +30,11 @@ bank.saveTransaction = function (id, amount) {
 
 bank.debit = function (id, amount) {
     /* make sure current balance is > amount */
-    if (getBalance(id) > amount){
-        this.saveTransaction(id, -amount);
-    }
+//IMPLEMENT THIS
+if(this.getBalance(id)>amount){
+    this.saveTransaction(id,-amount)
+}
+};
 
 bank.credit = function (id, amount) {
     this.saveTransaction(id, amount);
@@ -40,6 +42,14 @@ bank.credit = function (id, amount) {
 
 bank.getBalance = function (id) {
 //IMPLEMENT THIS
+let customerBalance = 0;
+    const customer = bank.transactionsDB.find(customer => customer.customerId === id);
+
+    for (let i = 0; i < customer.customerTransactions.length; i++) {
+        customerBalance += customer.customerTransactions[i];
+    }
+    return customerBalance;
+    //IMPLEMENT THIS
 };
 
 
@@ -49,17 +59,17 @@ bank.getBalance = function (id) {
  */
 bank.bankBalance = function () {
 //IMPLEMENT THIS
-let balance  = 0;
-for (const element of transactionsDB ){
-    for (const ele of element.customerTransactions){
-        totalbalance += ele;
+let balance = 0;
+for (let element of bank.transactionsDB) {
+    for (let i = 0; i < element.customerTransactions.length; i++) {
+        balance += element.customerTransactions[i];
     }
 }
-return balance ;
+return balance;
 };
 
 
 
 /* You need the module.exports when testing in node.  Comment it out when you send your file to the browser */
 /* must be at end of file if are exporting an object so the export is after the definition */
-// module.exports = {bank }; //add all of your object names here that you need for the node mocha tests
+//module.exports = {bank }; //add all of your object names here that you need for the node mocha tests
