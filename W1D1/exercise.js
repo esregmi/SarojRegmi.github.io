@@ -70,7 +70,9 @@ function filterRange(arr,a,b){
     return output;
 }
 console.log(filterRange([5, 3, 8, 1], 1, 4));
+
 */
+/*
 function filterRangeInPlace(arr, a, b) {
     let output = [];
     for (const element of arr){
@@ -82,3 +84,4 @@ function filterRangeInPlace(arr, a, b) {
 }
 console.log(filterRangeInPlace([5, 3, 8, 1], 1, 4));
 
+*/
