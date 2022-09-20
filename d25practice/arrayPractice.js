@@ -72,3 +72,10 @@ function maxAge(arr){
 
 }
 
+function averageAgeEven(arr){
+    return arr.map( item => item.age).filter((item => item % 2===0)).reduce((sum,amount)=> (sum+amount),0)/arr.map( item => item.age).filter((item => item % 2===0)).length;
+}
+
+function averageAgeOdd(arr){
+    return arr.map( item => item.age).filter(item => item % 2 !==0).reduce((sum, amount)=> (sum + amount),0)/arr.map( item => item.age).filter(item => item % 2 !==0).length;
+}

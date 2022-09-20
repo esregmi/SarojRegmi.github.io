@@ -1,6 +1,6 @@
 "use strict";
 /* global assert doubleNums  doubleAges filterEven filterOver10 findEvenNum findEvenAge */
-/* comment out the node specific code when going to the browser */ 
+/* comment out the node specific code when going to the browser */
 /*
 const assert = require("assert");  //always need this with node
 const myExports = require("./arrayPractice.js");  //with node need the name of your file with your functions here
@@ -55,7 +55,7 @@ describe("filter practice", function () {
 
     it("filter all age > 10", function () {
         assert.deepEqual(filterOver10(peopleArray),
-            [{ name: "Sam", age: 15 }, { name: "Lucy", age: 13 }, { name: "Barney", age: 80  }]);
+            [{ name: "Sam", age: 15 }, { name: "Lucy", age: 13 }, { name: "Barney", age: 80 }]);
         assert.deepEqual(peopleArray,
             [{ name: "Sam", age: 15 }, { name: "William", age: 6 }, { name: "Lucy", age: 13 }, { name: "Barney", age: 80 }]);
     });
@@ -66,7 +66,7 @@ describe("filter practice", function () {
     });
     it("find even age ", function () {
         assert.deepEqual(findEvenAge(peopleArray), { name: "William", age: 6 });
-        const peopleOddAge = [{ name: "Sam", age: 15 }, { name: "Lucy", age: 13 }, { name: "Barney", age: 81  }];
+        const peopleOddAge = [{ name: "Sam", age: 15 }, { name: "Lucy", age: 13 }, { name: "Barney", age: 81 }];
         assert.deepEqual(findEvenAge(peopleOddAge), undefined);
     });
 
@@ -100,5 +100,17 @@ describe("reduce Practice", function () {
     });
     it("find max of ages", function () {
         assert.deepEqual(maxAge(peopleArray), { name: "Barney", age: 80 });
-});
+    it("find the avarage even age", function () {
+     assert.deepEqual(averageAgeEven(peopleArray), 43);
+     assert.deepEqual(peopleArray,
+     [{ name: "Sam", age: 15 }, { name: "William", age: 6 }, { name: "Lucy", age: 13 }, { name: "Barney", age: 80 }]);
+    });
+
+     it("find the avarage even age", function () {
+     assert.deepEqual(averageAgeOdd(peopleArray), 14);
+     assert.deepEqual(peopleArray,
+     [{ name: "Sam", age: 15 }, { name: "William", age: 6 }, { name: "Lucy", age: 13 }, { name: "Barney", age: 80 }]);
+    });
+
+    });
 });
