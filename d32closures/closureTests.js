@@ -9,7 +9,6 @@ const inBetween = myExports.inBetween;
 const byField = myExports.byField; 
 const makeArmy = myExports.makeArmy;  
 */
-
 describe("inArray", function () {
     let arr = [1, 2, 3, 4, 5, 6, 7];
 
