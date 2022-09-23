@@ -114,6 +114,7 @@ function multiplyEvens(...more){
     * @param {Array} teamStatistics is array of players
     * @returns {Array} array of objects like {jersey: 12, high: 16}
     */
+   /*
    function findHighScores(teamStatisticsArr){
        const highScores = [];
        for (const player of teamStatisticsArr){
@@ -126,6 +127,8 @@ function multiplyEvens(...more){
     * @param {Object} player is player object like {jersey: 6, stats: [ {game : 1, points: 10}, {game : 2, points : 6} ] };
     * @returns {number}  max points in game for a player, e.g., 10 in above array
     */
+  
+  /*
    function findMax(player){
        let maxPts = 0;
        for (const game of player.stats){
@@ -136,4 +139,16 @@ function multiplyEvens(...more){
        return maxPts;
    }
    console.log("expect 10: ", findMax(player3));
-   
+   */
+
+   const player1 = { jersey: 8, stats: [{ game: 1, points: 6 }, { game: 2, points: 7 }] };
+   const player2 = { jersey: 12, stats: [{ game: 1, points: 16 }, { game: 2, points: 14 }] };
+   const player3 = { jersey: 6, stats: [{ game: 1, points: 10 }, { game: 2, points: 6 }] };
+   const teamStats = [player1, player2, player3];
+
+   function findTotalPlayerPoints(player) {
+
+    return player.stats.reduce((sum, curr)=>sum+=curr.points,0);
+  }
+    //console.log(findTotalScores(teamStats));
+    console.log((findTotalPlayerPoints(player2)));
