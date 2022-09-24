@@ -1,4 +1,5 @@
-"use strict";
+// "use strict";
+/*eslint-disable*/
 /*
 /*
 const team= ["Bob","Fred","jim"];
@@ -108,13 +109,15 @@ function multiplyEvens(...more){
    ** get their stats array
    ** find max points of the player
    ** create object with jersey and max points and push to high score array */
-   
+   /*
    /**
     * 
     * @param {Array} teamStatistics is array of players
     * @returns {Array} array of objects like {jersey: 12, high: 16}
     */
    /*
+   */
+  /*
    function findHighScores(teamStatisticsArr){
        const highScores = [];
        for (const player of teamStatisticsArr){
@@ -140,7 +143,7 @@ function multiplyEvens(...more){
    }
    console.log("expect 10: ", findMax(player3));
    */
-
+/*
    const player1 = { jersey: 8, stats: [{ game: 1, points: 6 }, { game: 2, points: 7 }] };
    const player2 = { jersey: 12, stats: [{ game: 1, points: 16 }, { game: 2, points: 14 }] };
    const player3 = { jersey: 6, stats: [{ game: 1, points: 10 }, { game: 2, points: 6 }] };
@@ -152,3 +155,44 @@ function multiplyEvens(...more){
   }
     //console.log(findTotalScores(teamStats));
     console.log((findTotalPlayerPoints(player2)));
+*/
+/*
+const abc = {
+  salute: "",
+  greet: function() {
+  this.salute = "Hello";
+  console.log(this.salute); //Hello
+  const setFrench = function(newSalute) { //inner function
+  this.salute = newSalute;
+  };
+  setFrench("Bonjour");
+  console.log(this.salute); //Bonjour??
+  }
+  };
+  abc.greet(); //Hello Hello ???
+*/
+
+// Fixing using arrow function [tested]
+let group = {
+  title: "Our Group",
+  students: ["John", "Pete", "Alice"],
+  showList() {
+  this.students.forEach((student)=> {
+  console.log(this.title + ': ' + student)
+  });
+  }
+  };
+  group.showList();
+
+  // Fixing using Bind[tested]
+  let group = {
+    title: "Our Group",
+    students: ["John", "Pete", "Alice"],
+    showList() {
+    this.students.forEach(function(student) {
+    console.log(this.title + ': ' + student)
+    }.bind(this));
+    }
+    };
+    group.showList();
+
