@@ -38,6 +38,6 @@ MakeBank.prototype.bankBalance = function () {
 
 const bank = new MakeBank();
 
-//console.log(bank.bankBalance());
+
 
 
