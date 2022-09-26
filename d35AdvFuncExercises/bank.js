@@ -38,7 +38,5 @@ Make the transactionsDB private by making it a local variable in the makeBank fu
         }
         return total;
     };
-
-
     return bank;
 }
