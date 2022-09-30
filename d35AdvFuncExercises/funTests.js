@@ -18,7 +18,7 @@ for(let i=0; i< arr.length; i++){
     mappedArr.push(newArr);
 }
 return mappedArr;
-}
+ }
 /**
  * 
  * @param {*} arr 
